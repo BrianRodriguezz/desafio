@@ -1,0 +1,271 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    font-size: 2rem;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    background-color: #e9ff70;
+}
+/**HEADER**/
+
+.encabezado {
+    background-image: url('../img/pita\ principal.jpg');
+    background-repeat: no-repeat;
+    background-position: auto;
+    background-size: cover;
+    height: 60vh;
+    width: 100%;
+    position:relative;
+    opacity: 85%;
+    grid-area: header;
+}
+
+.encabezado div {
+    height: 10rem;
+    width: 50rem;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    text-transform: uppercase;
+    text-align: center;
+    font-weight: bold;
+    color: #ffffff;
+    text-shadow: 4px 3px #41463d;
+}
+
+/**NAV**/
+
+nav {
+    background-color: #e9ff70;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    grid-area: nav;
+}
+
+nav ul li {
+    list-style-type: none;
+    display: inline-block;
+    margin: 2rem;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: black;
+}
+
+
+/**PRINCIPAL**/
+
+section {
+    margin: 1rem;
+    padding: 0.5rem;
+    -webkit-box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0); 
+    box-shadow: -10px 0px 13px -7px #000000, 10px 0px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
+    height: 50rem;
+
+    /*Flex*/
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section img {
+    width: 30rem;
+    border-radius: 5px;
+}
+
+section button {
+    border-radius: 5px;
+    background-color: #ffffff;
+    width: 10rem;
+    height: 4rem;
+    cursor: pointer;
+    margin-bottom: 1rem;
+}
+
+
+
+/**FOOTER**/
+
+footer {
+    padding-top: 3rem;
+    background-color: #e9ff70;
+    text-align: center;
+    grid-area: footer;
+}
+
+footer ul li {
+    display: inline-block;
+    margin: 2rem;
+}
+
+
+/***GRID***/
+
+.remeraNegra {
+    grid-area: remeraNegra;
+}
+
+
+.remeraCeleste {
+    grid-area: remeraCeleste;
+}
+
+
+.remeraNaranja {
+    grid-area: remeraNaranja;
+}
+
+
+.remeraAmarilla {
+    grid-area: remeraAmarilla;
+}
+
+/* .short {
+    grid-area: short;
+}
+
+.medias {
+    grid-area: medias;
+}
+
+.silbato {
+    grid-area: silbato;
+}
+
+.tarjetas {
+    grid-area: tarjetas;
+} */
+.contenedor {
+    border: 2px red dotted;
+    margin: 30px;
+    padding: 30px;
+}
+
+.contenedor p { 
+    margin: 25px;
+    padding: 25px;
+    color: black;
+    font-size: 30px;
+    font-family: Arial, Helvetica, sans-serif;
+    word-spacing: 10px;
+}
+
+.gridPadre {
+    display: grid;
+    grid-template-areas: 
+    "header header header header"
+    "nav nav nav nav"
+    "remeraNegra remeraCeleste remeraNaranja remeraAmarilla"
+    "remeraNegra remeraCeleste remeraNaranja remeraAmarilla" 
+    "short medias silbato tarjeta"
+    "short medias silbato tarjeta"
+    "footer footer footer footer"
+    ;
+}
+
+/***TABLET***/
+
+@media (min-width:700px) and (max-width:1100px) {
+    .gridPadre {
+        display: grid;
+        grid-template-areas: 
+        "header header"
+        "nav nav"
+        "remeraNegra remeraCeleste"
+        "remeraNaranja remeraAmarilla"
+        "short medias" 
+        "silbato tarjeta"
+        "footer footer"
+        ;
+    }
+
+    .encabezado {
+        background-image: url('../img/pita\ principal.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 60vh;
+        width: 100%;
+        position:relative;
+        opacity: 85%;
+        grid-area: header;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    section img {
+        width: 300px;
+    }
+}
+
+
+/***MÓVIL***/
+
+@media (max-width:699px) {
+    .gridPadre {
+        display: grid;
+        grid-template-areas: 
+        "header"
+        "nav"
+        "remeraNegra"
+        "remeraCeleste"
+        "remeraNaranja"
+        "remeraAmarilla"
+        "short"
+        "medias"
+        "silbato" 
+        "tarjeta"
+        "footer"
+        ;
+    }
+
+    html {
+        font-size: 75%;
+    }
+
+    .encabezado {
+        background-image: url('../img/pita\ principal.jpg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: cover;
+        height: 60vh;
+        width: 100%;
+        position:relative;
+        opacity: 85%;
+        grid-area: header;
+    }
+
+    nav {
+        position: static;
+    }
+
+    .encabezado div {
+        max-width: 90%;
+    }
+
+    section {
+        text-align: center;
+    }
+
+    section img {
+        width: 300px;
+    }
+}
